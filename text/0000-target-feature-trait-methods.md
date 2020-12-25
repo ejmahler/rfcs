@@ -196,7 +196,9 @@ making refactoring more difficult.
 # Rationale and alternatives
 [rationale-and-alternatives]: #rationale-and-alternatives
 
-One obvious alternative is to remove the requirement for the trait impl to duplicate the `#[target_feature(..)]` attribute. Developers would have to repeat themselves less, leading to less friction when writing and editing code. A drawback to this alternative is increased cognitive load: If you're editing one of these trait impls, you have to scroll to somewhere else in the file, or to another file, or to another crate entirely, in order to see what features the trait method enables. Expecting the developer to keep more information in their head while editing will resulting them making more mistakes.
+One obvious alternative is to remove the requirement for the trait impl to duplicate the `#[target_feature(..)]` attribute. Developers would have to repeat themselves less, leading to less friction when writing and editing code.
+
+A drawback to this alternative is increased cognitive load: If you're editing one of these trait impls, you'll have to scroll to somewhere else in the file, or to another file, or to another crate entirely, in order to see what features the trait method enables. We're effectively expecting the developer to keep more information in their head while editing, which will result in more mistakes.
 
 # Prior art
 [prior-art]: #prior-art
