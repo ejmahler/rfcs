@@ -220,7 +220,7 @@ For example, we have a slice of `Complex<f32>`, and we want to load a __m256 fro
 #[target_feature(enable = "avx")]
 fn load_complex(data: &[Complex<f32>], index: usize) -> __m256 {
     assert!(data.len() >= index + 4);
-    _mm256_loadu_ps(data.as_ptr().add(index) as *const f32)
+    unsafe { _mm256_loadu_ps(data.as_ptr().add(index) as *const f32) }
 }
 ```
 
